@@ -3,7 +3,11 @@
     <div>
         <a class="flex items-center gap-2" href="/">
             <img class="h-6" src="{% static 'images/logo.svg' %}" alt="Logo"/>
-            <span class="text-lg font-bold">Real-Time Chat</span>
+            <span class="text-lg font-bold">Real-Time Gossips
+                {% if debug %}
+                <span class="text-yellow-400 font-light italicml-1">DEV</span>
+                {% endif %}
+            </span>
         </a>
     </div>
     <nav class="block relative">
