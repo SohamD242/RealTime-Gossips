@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 from environ import Env
 
 env=Env()
@@ -98,7 +98,7 @@ ROOT_URLCONF = 'a_core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / 'templates' ],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,8 +126,8 @@ else:
         "default": {
             "BACKEND": "channels_redis.core.RedisChannelLayer",
             "CONFIG": {
-                # "hosts": [('redis://default:FKpnBWbXkPTWFyIqDwmQvwfHzpgrRBSG@autorack.proxy.rlwy.net:58677')], #REDIS_PUBLIC_URL
-                "hosts": [env('REDIS_URL')],
+                "hosts": [('redis://default:FKpnBWbXkPTWFyIqDwmQvwfHzpgrRBSG@autorack.proxy.rlwy.net:58677')], #REDIS_PUBLIC_URL
+                # "hosts": [env('REDIS_URL')],
             },
         },
     }
