@@ -43,7 +43,7 @@ def chat_view(request, chatroom_name = 'Public-chat'):
                'user' : request.user
                     
             }
-            return render(request,'a_rtchat/partials/chat_messages_p.html', context)
+            return render(request, 'a_rtchat/partials/message_content.html', context)
         
     context = {
         'chat_messages' : chat_messages,
@@ -156,7 +156,7 @@ def chat_file_upload(request, chatroom_name):
         message = GroupMessage.objects.create(
             file = file,
             author = request.user, 
-            group = chat_group,
+            group = chat_group
         )
         channel_layer = get_channel_layer()
         event = {
