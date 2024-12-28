@@ -36,7 +36,7 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'realtime-gossips.onrender.com']
 
 INTERNAL_IPS = (
     '127.0.0.1',
@@ -44,7 +44,7 @@ INTERNAL_IPS = (
 )
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://*',
+    'https://realtime-gossips.onrender.com',
     'https://ddhintkeb.cloudinary.net',
     'https://res.cloudinary.com',
 ]
