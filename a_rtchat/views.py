@@ -41,7 +41,7 @@ def chat_view(request, chatroom_name='Public-chat'):
                'message': message,
                'user': request.user
             }
-            return render(request, 'templates/chat/partials/chat_message_p.html', context)
+            return render(request, 'templates/a_rtchat/partials/chat_message_p.html', context)
         
     context = {
         'chat_messages': chat_messages,
@@ -51,7 +51,7 @@ def chat_view(request, chatroom_name='Public-chat'):
         'chat_group': chat_group
     }
     
-    return render(request, 'chat/chat.html', context)
+    return render(request, 'a_rtchat/chat.html', context)
 
 
 @login_required
@@ -87,7 +87,7 @@ def create_groupchat(request):
     context = {
         'form': form
     }
-    return render(request, 'templates/chat/create_groupchat.html', context)
+    return render(request, 'templates/a_rtchat/create_groupchat.html', context)
 
 
 @login_required
@@ -112,7 +112,7 @@ def chatroom_edit_view(request, chatroom_name):
         'form': form,
         'chat_group': chat_group
     }
-    return render(request, 'chat/chatroom_edit.html', context)
+    return render(request, 'a_rtchat/chatroom_edit.html', context)
 
 @login_required
 def chatroom_delete_view(request, chatroom_name):
@@ -125,7 +125,7 @@ def chatroom_delete_view(request, chatroom_name):
         messages.success(request, 'group deleted')
         return redirect('home')
     
-    return render(request, 'chat/chatroom_delete.html', {'chat_group': chat_group})
+    return render(request, 'a_rtchat/chatroom_delete.html', {'chat_group': chat_group})
 
 @login_required
 def chatroom_leave_view(request, chatroom_name):
