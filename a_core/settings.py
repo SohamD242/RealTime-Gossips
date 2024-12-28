@@ -126,8 +126,8 @@ else:
         "default": {
             "BACKEND": "channels_redis.core.RedisChannelLayer",
             "CONFIG": {
-                "hosts": [('redis://default:FKpnBWbXkPTWFyIqDwmQvwfHzpgrRBSG@autorack.proxy.rlwy.net:58677')], #REDIS_PUBLIC_URL
-                # "hosts": [env('REDIS_URL')],
+                # "hosts": [('redis://default:FKpnBWbXkPTWFyIqDwmQvwfHzpgrRBSG@autorack.proxy.rlwy.net:58677')], #REDIS_PUBLIC_URL
+                "hosts": [env('REDIS_URL')],
             },
         },
     }
